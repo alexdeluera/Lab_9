@@ -5,6 +5,10 @@ def encode(password):
         new_str+=str(new_num)
     return new_str
 
+def decode(password):
+    #to be filled in by partner
+    pass
+
 def main():
     option=0
     
