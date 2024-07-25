@@ -6,8 +6,20 @@ def encode(password):
     return new_str
 
 def decode(password):
-    #to be filled in by partner
-    pass
+    old_password = []
+    for char in password:
+        char = int(char)
+        if 3 <= char <= 9:
+            char = str(char - 3)
+        elif char == 0:
+            char = "7"
+        elif char == 1:
+            char = "8"
+        elif char == 2:
+            char = "9"
+        old_password.append(char)
+    original = ''.join(old_password)
+    return password, original
 
 def main():
     option=0
