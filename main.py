@@ -1,7 +1,14 @@
 def encode(password):
     new_str=""
     for char in password:
-        new_num=int(char)+3
+        if char=="9":
+            new_num=2
+        elif char=="8":
+            new_num=1
+        elif char=="7":
+            new_num=0
+        else:
+            new_num=int(char)+3
         new_str+=str(new_num)
     return new_str
 
