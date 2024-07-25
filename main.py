@@ -6,10 +6,10 @@ def encode(password):
     return new_str
 
 def decode(password):
-    old_password = []
-    for char in password:
-        char = int(char)
-        if 3 <= char <= 9:
+    old_password = [] # creates a running list as each char in password to decode is decoded
+    for char in password: # iterating through password string
+        char = int(char) # turns each value into an int
+        if 3 <= char <= 9: # accounts for when (char - 3) is negative
             char = str(char - 3)
         elif char == 0:
             char = "7"
@@ -17,9 +17,9 @@ def decode(password):
             char = "8"
         elif char == 2:
             char = "9"
-        old_password.append(char)
-    original = ''.join(old_password)
-    return password, original
+        old_password.append(char) 
+    original = ''.join(old_password) # original aka original password after decoding
+    return password, original # returns the encoded and decoded password, respectively
 
 def main():
     option=0
